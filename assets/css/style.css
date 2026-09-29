@@ -1,0 +1,74 @@
+:root {
+  --bg: #000000;
+  --text: #0f0; /* зелёный как на VT100 */
+  --accent: #ffcc00; /* янтарный для акцентов */
+  --card: #111111;
+  --border: #333333;
+}
+
+body {
+  font-family: monospace, Consolas, 'Courier New', monospace;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.5;
+}
+
+header {
+  max-width: 72ch; /* 72 символа — наследие 80‑символьных терминалов */
+  margin: 2rem auto;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+p.subtitle {
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+main {
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+.question-block {
+  background: var(--card);
+  padding: 1.2rem;
+  border: 1px solid var(--border); /* одинарная рамка, без скруглений — как в man pages */
+  margin-bottom: 1.2rem;
+}
+
+.q-title {
+  font-weight: bold;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+
+pre {
+  background: #001100;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+code {
+  font-family: inherit;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}

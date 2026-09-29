@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Язык C: Unix, переносимость, системное программирование</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #0f0; /* зелёный как на VT100 */
+      --accent: #ffcc00; /* янтарный для акцентов */
+      --card: #111111;
+      --border: #333333;
+    }
+
+    body {
+      font-family: monospace, Consolas, 'Courier New', monospace;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0 1rem;
+      line-height: 1.5;
+    }
+
+    header {
+      max-width: 72ch; /* 72 символа — наследие 80‑символьных терминалов */
+      margin: 2rem auto;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    p.subtitle {
+      color: #888;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 72ch;
+      margin: 0 auto;
+    }
+
+    .question-block {
+      background: var(--card);
+      padding: 1.2rem;
+      border: 1px solid var(--border); /* одинарная рамка, без скруглений — как в man pages */
+      margin-bottom: 1.2rem;
+    }
+
+    .q-title {
+      font-weight: bold;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    pre {
+      background: #001100;
+      padding: 1rem;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+
+    code {
+      font-family: inherit;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Язык C: Unix, переносимость и системное программирование</h1>
+    <p class="subtitle">Как язык, близкий к машине, сделал ОС переносимой</p>
+  </header>
+
+  <main>
+    <!-- Блок 1: blocks/01-intro.md -->
+    <section class="question-block">
+      <div class="q-title">Что это за язык?</div>
+      <p>C — процедурный язык программирования, созданный в начале 1970‑х в Bell Labs. Он сочетает близость к машине (указатели, прямой доступ к памяти) с переносимостью между архитектурами. На C написаны ядра ОС, драйверы, библиотеки и утилиты. Это язык системного программирования: он позволяет писать код, который компилируется на разных платформах, но при этом даёт полный контроль над ресурсами.</p>
+      <pre><code>#include &lt;unistd.h&gt;
+int main() {
+  write(1, "hello, world\n", 13);
+  return 0;
+}</code></pre>
+    </section>
+
+    <!-- Блок 2: blocks/02-why-needed.md -->
+    <section class="question-block">
+      <div class="q-title">Зачем он был нужен?</div>
+      <p>До C системное ПО писали на ассемблере — код был непереносимым и сложным в поддержке. C дал возможность писать на высоком уровне, сохраняя полный контроль над памятью и аппаратурой. Это позволило переписать ядро Unix на C, сделав саму ОС переносимой между разными машинами. Кроме того, C стал стандартом для библиотек и интерфейсов: многие языки используют C‑ABI, а системные вызовы ОС традиционно оформляются как C‑функции.</p>
+    </section>
+
+    <!-- Блок 3: blocks/03-historical-context.md -->
+    <section class="question-block">
+      <div class="q-title">Историческая среда</div>
+      <p>C и Unix сформировались в Bell Labs в 1969–1973 годах. Компьютеры были дорогими, ресурсы ограниченными, а обмен кодом — важной частью работы. Unix изначально писался на ассемблере для PDP‑7, затем на B, а в начале 1970‑х — на C для PDP‑11. Публикация Unix в университетах и распространение C сделали язык стандартом де‑факто. В 1980‑е годы стандарт ANSI C и POSIX закрепили переносимость кода между Unix‑системами и другими платформами.</p>
+    </section>
+
+    <!-- Блок 4: blocks/04-why-interest.md -->
+    <section class="question-block">
+      <div class="q-title">Почему курсы могли бы заинтересовать человека того времени?</div>
+      <p>Для инженера 1970–1980‑х курсы по C были пропуском в системное программирование и работу с Unix. Знание C означало возможность писать переносимый код, участвовать в развитии Unix и портировать системы на новые машины. Это был путь к созданию собственных ОС, драйверов и утилит, а также к участию в сообществе, где ценились эффективность и понимание «железа». Для студентов C был инструментом экспериментов: можно было писать код, близкий к ассемблеру, но структурированный и поддерживаемый. Наконец, C стал основой для карьеры: системные программисты, знающие C, были востребованы в академических центрах и индустрии.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Проект: исследовательские материалы и сайт о языке C. GitHub Pages.</p>
+  </footer>
+</body>
+</html>
